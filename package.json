@@ -8,7 +8,6 @@
     "packages/*"
   ],
   "scripts": {
-    "postinstall": "husky install",
     "build": "scripty",
     "clean": "scripty",
     "lint": "scripty",
@@ -30,7 +29,7 @@
     "@typescript-eslint/parser": "^4.20.0",
     "commitlint": "^12.1.1",
     "eslint": "^7.23.0",
-    "husky": "^5.2.0",
+    "husky": "^3.1.0",
     "lerna": "^4.0.0",
     "lerna-changelog": "^1.0.1",
     "rimraf": "^3.0.2",
