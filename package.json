@@ -14,7 +14,7 @@
     "test": "scripty"
   },
   "scripty": {
-    "path": "./packages/scripts/workspace"
+    "path": "./scripts/workspace"
   },
   "devDependencies": {
     "@commitlint/cli": "^12.1.1",

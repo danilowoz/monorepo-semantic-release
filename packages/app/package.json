@@ -12,7 +12,7 @@
     "lint": "scripty"
   },
   "scripty": {
-    "path": "../scripts/packages"
+    "path": "../../scripts/packages"
   },
   "publishConfig": {
     "access": "public"
