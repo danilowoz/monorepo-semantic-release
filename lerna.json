@@ -3,5 +3,15 @@
   "npmClient": "yarn",
   "version": "independent",
   "useWorkspaces": true,
-  "nohoist": ["parcel-bundler"]
+  "nohoist": ["parcel-bundler"],
+  "command": {
+    "version": {
+      "conventionalCommits": true,
+      "message": "chore: bump packages"
+    },
+    "publish": {
+      "conventionalCommits": true,
+      "message": "chore: bump packages"
+    }
+  }
 }
