@@ -1,7 +1,6 @@
 {
   "compilerOptions": {
     "module": "CommonJS",
-    "types": [],
     "sourceMap": true,
     "target": "ES2018",
     "strict": true,
@@ -10,6 +9,6 @@
     "noImplicitReturns": true,
     "declaration": true,
     "outDir": "dist",
-    "rootDir": "src"
+    "composite": true
   }
 }

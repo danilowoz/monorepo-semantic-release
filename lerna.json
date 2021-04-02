@@ -3,7 +3,6 @@
   "npmClient": "yarn",
   "version": "independent",
   "useWorkspaces": true,
-  "nohoist": ["parcel-bundler"],
   "command": {
     "version": {
       "conventionalCommits": true,

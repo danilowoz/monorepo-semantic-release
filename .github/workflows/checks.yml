@@ -1,4 +1,4 @@
-name: Lint, test and build
+name: Continuous Integration
 on: [push, pull_request]
 
 jobs:

@@ -8,6 +8,7 @@
     "packages/*"
   ],
   "scripts": {
+    "prebuild": "yarn run clean",
     "build": "scripty",
     "clean": "scripty",
     "lint": "scripty",
