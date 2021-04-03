@@ -5,14 +5,11 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "prebuild": "yarn run clean",
-    "build": "scripty",
+    "build": "yarn tsc -b",
     "pretest": "yarn run build",
-    "test": "scripty",
-    "clean": "scripty",
-    "lint": "scripty"
-  },
-  "scripty": {
-    "path": "../../scripts/packages"
+    "test": "yarn jest",
+    "clean": "yarn rimraf dist *.tsbuildinfo",
+    "lint": "scyarn eslint src --ext ts,js,tsx,jsxripty"
   },
   "publishConfig": {
     "access": "public"
