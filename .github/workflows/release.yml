@@ -19,17 +19,14 @@ jobs:
 
       - name: Configure CI Git User
         run: |
-          git config --global user.name 'Danilo Woznica'
-          git config --global user.email 'danilowoz@gmail.com'
+          git config --global user.name "$(git --no-pager log --format=format:'%an' -n 1)"
+          git config --global user.email "$(git --no-pager log --format=format:'%ae' -n 1)"
           git remote set-url origin https://${GITHUB_ACTOR}:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}
-          echo https://${GITHUB_ACTOR}:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
       - name: Authenticate with Registry
-        run: |
-          echo //registry.npmjs.org/:_authToken=${NPM_TOKEN} > .npmrc
-          cat .npmrc
+        run: echo //registry.npmjs.org/:_authToken=${NPM_TOKEN} > .npmrc
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 

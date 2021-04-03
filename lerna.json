@@ -6,11 +6,11 @@
   "command": {
     "version": {
       "conventionalCommits": true,
-      "message": "chore: bump packages"
+      "message": "chore: [skip ci] bump packages"
     },
     "publish": {
       "conventionalCommits": true,
-      "message": "chore: bump packages"
+      "message": "chore: [skip ci] bump packages"
     }
   }
 }
