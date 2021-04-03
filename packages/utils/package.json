@@ -9,7 +9,7 @@
     "pretest": "yarn run build",
     "test": "yarn jest",
     "clean": "yarn rimraf dist *.tsbuildinfo",
-    "lint": "scyarn eslint src --ext ts,js,tsx,jsxripty"
+    "lint": "yarn eslint src --ext ts,js,tsx,jsx"
   },
   "publishConfig": {
     "access": "public"
