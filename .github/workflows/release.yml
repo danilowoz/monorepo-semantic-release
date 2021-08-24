@@ -42,7 +42,7 @@ jobs:
         run: yarn run build
 
       - name: Publish
-        run: yarn lerna publish --yes --canary prerelease
+        run: yarn lerna publish --yes
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
