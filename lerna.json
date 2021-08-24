@@ -6,10 +6,12 @@
   "command": {
     "version": {
       "conventionalCommits": true,
+      "createRelease": "github",
       "message": "chore: [skip ci] bump packages"
     },
     "publish": {
       "conventionalCommits": true,
+      "createRelease": "github",
       "message": "chore: [skip ci] bump packages"
     }
   }

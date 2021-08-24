@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0](https://github.com/danilowoz/monorepo-semantic-release/compare/danilowoz-test-utils@0.1.2...danilowoz-test-utils@0.2.0) (2021-04-05)
+
+
+### Features
+
+* **danilowoz-test-utils:** add isNumber method ([8556c70](https://github.com/danilowoz/monorepo-semantic-release/commit/8556c70f2bff0392bbb8db4213eb1da09d7e9830))
+
+
+
+
+
 ## [0.1.2](https://github.com/danilowoz/monorepo-semantic-release/compare/danilowoz-test-utils@0.1.1...danilowoz-test-utils@0.1.2) (2021-04-03)
 
 **Note:** Version bump only for package danilowoz-test-utils

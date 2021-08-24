@@ -8,3 +8,4 @@ const arrayLength = (payload: unknown): number => {
 };
 
 export { isArray, arrayLength };
+
