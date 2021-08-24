@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/danilowoz/monorepo-semantic-release/compare/danilowoz-test-utils@0.2.0...danilowoz-test-utils@0.3.0) (2021-08-24)
+
+
+### Features
+
+* **danilowoz-test-utils:** add arraylength method ([bc29fe8](https://github.com/danilowoz/monorepo-semantic-release/commit/bc29fe88698184881c34dbffdb2f1863dc59cbaa))
+
+
+
+
+
 # [0.2.0](https://github.com/danilowoz/monorepo-semantic-release/compare/danilowoz-test-utils@0.1.2...danilowoz-test-utils@0.2.0) (2021-04-05)
 
 
