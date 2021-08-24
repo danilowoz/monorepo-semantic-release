@@ -1,7 +1,7 @@
 const isArray = (payload: unknown): payload is Array<any> =>
   Array.isArray(payload);
 
-const isNumber = (payload: unknown): payload is Number =>
+const isNumber = (payload: unknown): payload is number =>
   !Number.isNaN(payload);
 
 const arrayLength = (payload: unknown): number => {
