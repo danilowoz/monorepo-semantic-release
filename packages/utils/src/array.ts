@@ -1,11 +1,13 @@
 const isArray = (payload: unknown): payload is Array<any> =>
   Array.isArray(payload);
 
+const isNumber = (payload: unknown): payload is Number =>
+  !Number.isNaN(payload);
+
 const arrayLength = (payload: unknown): number => {
   if (!isArray(payload)) return 0;
 
   return payload.length;
 };
 
-export { isArray, arrayLength };
-
+export { isArray, arrayLength, isNumber };
