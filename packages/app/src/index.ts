@@ -14,7 +14,7 @@ class App {
   }
 
   log(): void {
-    console.log(this.data);
+    console.log(this.data, "foo");
   }
 }
 
