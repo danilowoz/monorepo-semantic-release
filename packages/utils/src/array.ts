@@ -1,7 +1,11 @@
 const isArray = (payload: unknown): payload is Array<any> =>
   Array.isArray(payload);
 
-const isNumber = (payload: unknown): payload is number =>
-  typeof payload === "number";
+const arrayLength = (payload: unknown): number => {
+  if (!isArray(payload)) return 0;
 
-export { isArray, isNumber };
+  return payload.length;
+};
+
+export { isArray, arrayLength };
+
