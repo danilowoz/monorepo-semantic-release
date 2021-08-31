@@ -84,10 +84,6 @@ jobs:
     timeout-minutes: 10
     if: github.event_name == 'push' && github.ref == 'refs/heads/next'
     needs: [lint, build, test, commitlint]
-    env:
-      GH_TOKEN: ${{ secrets.GH_TOKEN }}
-      GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
     steps:
       - name: Checkout
