@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/danilowoz/monorepo-semantic-release/compare/danilowoz-test-utils@0.3.0...danilowoz-test-utils@0.4.0) (2021-08-31)
+
+
+### Bug Fixes
+
+* **danilowoz-test-utils:** ts check ([a49b33e](https://github.com/danilowoz/monorepo-semantic-release/commit/a49b33e7bd7a5548c2789cfe9337338a515d3e3c))
+
+
+### Features
+
+* **danilowoz-test-utils:** add is number method ([a533290](https://github.com/danilowoz/monorepo-semantic-release/commit/a533290328dde3b05568293a123382b220b6e478))
+
+
+
+
+
 # [0.3.0](https://github.com/danilowoz/monorepo-semantic-release/compare/danilowoz-test-utils@0.2.0...danilowoz-test-utils@0.3.0) (2021-08-24)
 
 
