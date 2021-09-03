@@ -15,10 +15,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v1
 
-      - name: Prepare repository
-        run: git checkout "${GITHUB_REF:11}"
-
-      - name: Setup | Configure git user
+      - name: Configure git user
         run: |
           git config --global user.name "${{ github.actor }}"
           git config --global user.email "${{ github.actor }}@users.noreply.github.com"
@@ -46,4 +43,4 @@ jobs:
         run: yarn run build
 
       - name: Publish
-        run: yarn lerna publish --yes
+        run: yarn lerna publish --yes --canary
