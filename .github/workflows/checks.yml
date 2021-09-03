@@ -92,13 +92,10 @@ jobs:
       - name: Prepare repository
         run: git checkout "${GITHUB_REF:11}"
 
-      - name: Configure CI Git User
+      - name: Setup | Configure git user
         run: |
-          git config --global user.name "$(git --no-pager log --format=format:'%an' -n 1)"
-          git config --global user.email "$(git --no-pager log --format=format:'%ae' -n 1)"
-          git remote set-url origin https://${GITHUB_ACTOR}:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}
-        env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          git config --global user.name "${{ github.actor }}"
+          git config --global user.email "${{ github.actor }}@users.noreply.github.com"
 
       - name: Authenticate with Registry
         run: echo //registry.npmjs.org/:_authToken=${NPM_TOKEN} > .npmrc
@@ -120,4 +117,4 @@ jobs:
         run: yarn run build
 
       - name: Publish
-        run: yarn lerna publish --yes --canary prerelease
+        run: yarn lerna publish --yes --canary
