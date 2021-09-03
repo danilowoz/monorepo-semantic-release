@@ -12,6 +12,10 @@ class App {
       this.data = data;
     }
   }
+
+  log(): void {
+    console.log("foo");
+  }
 }
 
 export { App };
