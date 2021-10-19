@@ -13,7 +13,7 @@ jobs:
       NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
-      - name: Setup | Checkout
+      - name: Checkout
         uses: actions/checkout@v2
         with:
           # pulls all commits (needed for lerna / semantic release to correctly version)
@@ -25,27 +25,22 @@ jobs:
           node-version: "14"
           registry-url: "https://npm.pkg.github.com/"
 
-      - name: Setup | Ensure registry access
-        run: npm whoami --registry https://npm.pkg.github.com/
-
-      - name: Setup | Configure git user
+      - name: Configure git user
         run: |
           git config --global user.name "${{ github.actor }}"
           git config --global user.email "${{ github.actor }}@users.noreply.github.com"
-      - name: Setup | Yarn Install
+
+      - name: Install dependencies
         uses: bahmutov/npm-install@v1
 
-      - name: Prepare | Lerna Version
+      - name: Commitlint
+        run: git log -1 --pretty=format:"%s" | yarn commitlint
+
+      - name: Lerna Version
         run: yarn lerna version --create-release github --yes
 
-      - name: Prepare | Build
+      - name: Build
         run: yarn build
 
-      - name: Release | Lerna Publish
+      - name: Publish
         run: lerna publish from-package --yes
-
-      - name: Cleanup | Save Artifacts
-        if: ${{ always() }}
-        uses: actions/upload-artifact@v2
-        with:
-          path: lerna-debug.log
