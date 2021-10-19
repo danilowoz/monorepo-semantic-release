@@ -39,5 +39,8 @@ jobs:
       - name: Build
         run: yarn run build
 
+      - name: Version
+        run: yarn lerna version --create-release github --yes from-package
+
       - name: Publish
-        run: yarn lerna publish --create-release github --yes from-package
+        run: yarn lerna publish --yes from-package
