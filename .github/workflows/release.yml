@@ -40,4 +40,4 @@ jobs:
         run: yarn run build
 
       - name: Publish
-        run: yarn lerna publish --yes --canary
+        run: yarn lerna publish --yes
