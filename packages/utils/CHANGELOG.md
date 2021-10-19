@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.2](https://github.com/danilowoz/monorepo-semantic-release/compare/danilowoz-test-utils@0.5.1...danilowoz-test-utils@0.5.2) (2021-10-19)
+
+
+### Bug Fixes
+
+* **danilowoz-test-utils:** remove log ([59a954a](https://github.com/danilowoz/monorepo-semantic-release/commit/59a954ae7e21bc4848ec61792485acd156e85549))
+
+
+
+
+
 ## [0.5.1](https://github.com/danilowoz/monorepo-semantic-release/compare/danilowoz-test-utils@0.5.0...danilowoz-test-utils@0.5.1) (2021-10-19)
 
 
