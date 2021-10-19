@@ -1,6 +1,6 @@
 {
   "name": "danilowoz-test-app",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -22,6 +22,6 @@
     "typescript": "^4.2.3"
   },
   "dependencies": {
-    "danilowoz-test-utils": "^0.3.0"
+    "danilowoz-test-utils": "^0.2.0"
   }
 }
