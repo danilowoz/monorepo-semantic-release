@@ -43,7 +43,7 @@ jobs:
         run: yarn run build
 
       - name: Version
-        run: yarn lerna version --yes from-package
+        run: yarn lerna version --yes
 
       - name: Publish
         run: yarn lerna publish --yes from-package
