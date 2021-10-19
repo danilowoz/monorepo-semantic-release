@@ -1,4 +1,4 @@
-name: Continuous Deployment
+name: Release
 
 on:
   push:
@@ -6,27 +6,18 @@ on:
       - master
 
 jobs:
-  release:
-    name: Publish
+  publish:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
-      - name: Checkout
+      - name: Setup | Checkout
         uses: actions/checkout@v2
         with:
           # pulls all commits (needed for lerna / semantic release to correctly version)
           fetch-depth: "0"
-
-      - name: Configure git user
-        run: |
-          git config --global user.name "${{ github.actor }}"
-          git config --global user.email "${{ github.actor }}@users.noreply.github.com"
-
-      - name: Authenticate with Registry
-        run: echo //registry.npmjs.org/:_authToken=${NPM_TOKEN} > .npmrc
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Setup | Node.js
         uses: actions/setup-node@v2
@@ -34,22 +25,27 @@ jobs:
           node-version: "14"
           registry-url: "https://npm.pkg.github.com/"
 
-      - uses: actions/cache@v2
+      - name: Setup | Ensure registry access
+        run: npm whoami --registry https://npm.pkg.github.com/
+
+      - name: Setup | Configure git user
+        run: |
+          git config --global user.name "${{ github.actor }}"
+          git config --global user.email "${{ github.actor }}@users.noreply.github.com"
+      - name: Setup | Yarn Install
+        uses: bahmutov/npm-install@v1
+
+      - name: Prepare | Lerna Version
+        run: yarn lerna version --create-release github --yes
+
+      - name: Prepare | Build
+        run: yarn build
+
+      - name: Release | Lerna Publish
+        run: lerna publish from-package --yes
+
+      - name: Cleanup | Save Artifacts
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v2
         with:
-          path: "**/node_modules"
-          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
-
-      - name: Install dependencies
-        run: yarn install --frozen-lockfile
-
-      - name: Commitlint
-        run: git log -1 --pretty=format:"%s" | yarn commitlint
-
-      - name: Build
-        run: yarn run build
-
-      - name: Version
-        run: yarn lerna version --yes
-
-      - name: Publish
-        run: yarn lerna publish --yes from-package
+          path: lerna-debug.log
