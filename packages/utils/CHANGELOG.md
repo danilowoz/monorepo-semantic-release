@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0](https://github.com/danilowoz/monorepo-semantic-release/compare/danilowoz-test-utils@0.4.0...danilowoz-test-utils@0.5.0) (2021-10-19)
+
+
+### Bug Fixes
+
+* **danilowoz-test-utils:** random changes ([f04766f](https://github.com/danilowoz/monorepo-semantic-release/commit/f04766f8f0fa3b1583cbf8c67cbacb95281a6b7b))
+* **danilowoz-test-utils:** random changes ([9abd1ef](https://github.com/danilowoz/monorepo-semantic-release/commit/9abd1ef6e19387b41ff9cc7411c5482a4892e902))
+* **danilowoz-test-utils:** random changes ([ad1ed21](https://github.com/danilowoz/monorepo-semantic-release/commit/ad1ed21366efbd8fa71be408857bf9906b1efe62))
+* **danilowoz-test-utils:** random changes ([22946f7](https://github.com/danilowoz/monorepo-semantic-release/commit/22946f7e96b8f152a8502ead65854ae38ab0ffd8))
+
+
+### Features
+
+* **danilowoz-test-app:** remove log ([c3a7e39](https://github.com/danilowoz/monorepo-semantic-release/commit/c3a7e39e916a98db477be3f4f4d6026c2418e0db))
+
+
+
+
+
 # [0.4.0](https://github.com/danilowoz/monorepo-semantic-release/compare/danilowoz-test-utils@0.3.0...danilowoz-test-utils@0.4.0) (2021-08-31)
 
 
