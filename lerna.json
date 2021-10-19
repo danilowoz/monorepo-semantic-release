@@ -5,6 +5,7 @@
   "useWorkspaces": true,
   "command": {
     "version": {
+      "allowBranch": "master",
       "conventionalCommits": true,
       "createRelease": "github",
       "message": "chore: [skip ci] bump packages"

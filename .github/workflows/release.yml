@@ -13,7 +13,10 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v1
+        uses: actions/checkout@v2
+        with:
+          # pulls all commits (needed for lerna / semantic release to correctly version)
+          fetch-depth: "0"
 
       - name: Configure git user
         run: |
@@ -40,7 +43,7 @@ jobs:
         run: yarn run build
 
       - name: Version
-        run: yarn lerna version --create-release github --yes from-package
+        run: yarn lerna version --yes from-package
 
       - name: Publish
         run: yarn lerna publish --yes from-package
