@@ -23,5 +23,6 @@
   },
   "dependencies": {
     "danilowoz-test-utils": "^0.2.0"
-  }
+  },
+  "gitHead": "5c1bc53d42f65f1b269a9afd59a15a9c2850663a"
 }
