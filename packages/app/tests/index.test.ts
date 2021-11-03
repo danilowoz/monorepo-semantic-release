@@ -8,6 +8,7 @@ describe("App", () => {
 
     app.set(["foo"]);
 
+    
     expect(app.get()).toStrictEqual(["foo"]);
   });
 
