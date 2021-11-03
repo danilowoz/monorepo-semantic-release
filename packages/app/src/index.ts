@@ -6,6 +6,7 @@ class App {
   get(): Array<string> {
     return this.data;
   }
+  
 
   set(data: unknown): void {
     if (isArray(data)) {
