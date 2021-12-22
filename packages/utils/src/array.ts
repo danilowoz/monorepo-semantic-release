@@ -6,6 +6,7 @@ const isNumber = (payload: unknown): payload is number =>
 
 const arrayLength = (payload: unknown): number => {
   if (!isArray(payload)) return 0;
+
   return payload.length;
 };
 
