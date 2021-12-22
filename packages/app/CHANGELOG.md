@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.2-experimental.0](https://github.com/danilowoz/monorepo-semantic-release/compare/danilowoz-test-app@0.3.1...danilowoz-test-app@0.3.2-experimental.0) (2021-12-22)
+
+**Note:** Version bump only for package danilowoz-test-app
+
+
+
+
+
 ## [0.3.1](https://github.com/danilowoz/monorepo-semantic-release/compare/danilowoz-test-app@0.3.0...danilowoz-test-app@0.3.1) (2021-10-19)
 
 
