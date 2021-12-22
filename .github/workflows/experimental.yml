@@ -30,11 +30,8 @@ jobs:
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - name: Install dependencies
-        uses: bahmutov/npm-install@v1
-
-      - name: Build
-        run: yarn build
+      - name: Lerna Version
+        run: lerna version prerelease --preid=experimental --yes
 
       - name: Publish
         run: lerna publish from-package --canary --preid=experimental --yes
