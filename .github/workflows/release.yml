@@ -3,7 +3,7 @@ name: Continuous Deployment
 on:
   push:
     branches:
-      - master
+      - next
 
 jobs:
   publish:
@@ -13,33 +13,34 @@ jobs:
       NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
-      - name: Checkout
+      - name: Setup | Checkout
         uses: actions/checkout@v2
         with:
           # pulls all commits (needed for lerna / semantic release to correctly version)
           fetch-depth: "0"
 
-      - name: Configure git user
+      - name: Setup | Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "14"
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Setup | Ensure registry access
+        run: npm whoami --registry https://npm.pkg.github.com/
+
+      - name: Setup | Configure git user
         run: |
           git config --global user.name "${{ github.actor }}"
           git config --global user.email "${{ github.actor }}@users.noreply.github.com"
-
-      - name: Authenticate with Registry
-        run: echo //registry.npmjs.org/:_authToken=${NPM_TOKEN} > .npmrc
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-      - name: Install dependencies
+          
+      - name: Setup | Yarn Install
         uses: bahmutov/npm-install@v1
 
-      - name: Commitlint
-        run: git log -1 --pretty=format:"%s" | yarn commitlint
-
-      - name: Build
-        run: yarn build
-
-      - name: Lerna Version
+      - name: Prepare | Lerna Version
         run: yarn lerna version --create-release github --yes
 
-      - name: Publish
+      - name: Prepare | Build
+        run: yarn build
+
+      - name: Release | Lerna Publish
         run: lerna publish from-package --yes
