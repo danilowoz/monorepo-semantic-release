@@ -3,7 +3,7 @@ name: Continuous Deployment
 on:
   push:
     branches:
-      - master
+      - next
 
 jobs:
   publish:
@@ -18,22 +18,20 @@ jobs:
         with:
           # pulls all commits (needed for lerna / semantic release to correctly version)
           fetch-depth: "0"
+          
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16.x'
+          registry-url: 'https://npm.pkg.github.com'
 
       - name: Configure git user
         run: |
           git config --global user.name "${{ github.actor }}"
           git config --global user.email "${{ github.actor }}@users.noreply.github.com"
 
-      - name: Authenticate with Registry
-        run: echo //registry.npmjs.org/:_authToken=${NPM_TOKEN} > .npmrc
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-
       - name: Install dependencies
         uses: bahmutov/npm-install@v1
-
-      - name: Commitlint
-        run: git log -1 --pretty=format:"%s" | yarn commitlint
 
       - name: Build
         run: yarn build
