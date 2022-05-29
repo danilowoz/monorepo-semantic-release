@@ -29,6 +29,9 @@ jobs:
         run: |
           git config --global user.name "${{ github.actor }}"
           git config --global user.email "${{ github.actor }}@users.noreply.github.com"
+          
+      - name: Setup | Ensure registry access
+        run: npm whoami --registry https://npm.pkg.github.com/
 
       - name: Install dependencies
         uses: bahmutov/npm-install@v1
